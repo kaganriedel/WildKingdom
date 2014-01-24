@@ -15,6 +15,8 @@
     __weak IBOutlet UICollectionView *photoCollectionView;
     __weak IBOutlet UILabel *titleLabel;
     __weak IBOutlet UIView *titleView;
+    __weak IBOutlet UITabBar *rootTabBar;
+    
 }
 
 @end
@@ -25,7 +27,9 @@
 {
     [super viewDidLoad];
     
-    [self performJSONRequest:@"lion,tiger"];
+    [self performJSONRequest:@"lions"];
+    
+    rootTabBar.selectedItem = rootTabBar.items[0];
 }
 
 
@@ -35,14 +39,13 @@
     photos = nil;
     [photoCollectionView reloadData];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/feeds/photos_public.gne?tags=%@&format=json&nojsoncallback=1_q", searchString]];
-    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c7b7008c23d7346d825b2a16c2e5c49&tags=%@&format=json&nojsoncallback=1", searchString]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
      {
-         photos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&connectionError][@"items"];
+         photos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&connectionError][@"photos"][@"photo"];
          NSLog(@"%i",photos.count);
          if (connectionError != nil)
          {
@@ -62,22 +65,22 @@
         
         if ([item.title isEqualToString:@"Lions"])
         {
-            [self performJSONRequest:@"lion,tiger"];
+            [self performJSONRequest:@"lions"];
             titleLabel.text = item.title;
             NSLog(@"selected lions");
         }
         if ([item.title isEqualToString:@"Tigers"])
         {
             NSLog(@"selected tigers");
-            [self performJSONRequest:@"lizard"];
+            [self performJSONRequest:@"tiger"];
             titleLabel.text = item.title;
         }
         if ([item.title isEqualToString:@"Bears"])
         {
             NSLog(@"selected bears");
-            [self performJSONRequest:@"fire"];
+            [self performJSONRequest:@"bear"];
             titleLabel.text = item.title;
-    }
+        }
 }
 
 #pragma mark UICollectionViewDelegate
@@ -86,7 +89,8 @@
 {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCellID" forIndexPath:indexPath];
     NSDictionary *photo = photos[indexPath.row];
-    NSURL *url = [NSURL URLWithString:photo[@"media"][@"m"]];
+    NSString *urlString = [NSString stringWithFormat: @"http://farm%@.staticflickr.com/%@/%@_%@_q.jpg", photo[@"farm"], photo[@"server"], photo[@"id"], photo[@"secret"]];
+    NSURL *url = [NSURL URLWithString:urlString];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     cell.imageView.image = image;

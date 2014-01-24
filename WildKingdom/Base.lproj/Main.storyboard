@@ -83,6 +83,7 @@
                     <tabBarItem key="tabBarItem" title="Lions" id="lYN-eV-7CB"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="xda-kG-PyU" id="VD1-a5-ZPY"/>
+                        <outlet property="rootTabBar" destination="GWp-eF-uw3" id="WrI-zz-H7N"/>
                         <outlet property="titleLabel" destination="jXw-IR-bWr" id="Fil-xm-d5Q"/>
                         <outlet property="titleView" destination="PxG-A9-xuE" id="8ki-9U-feX"/>
                     </connections>
