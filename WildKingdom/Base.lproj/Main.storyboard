@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xda-kG-PyU">
-                                <rect key="frame" x="0.0" y="53" width="320" height="515"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xda-kG-PyU">
+                                <rect key="frame" x="0.0" y="53" width="320" height="466"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6lu-y6-RfB">
                                     <size key="itemSize" width="150" height="150"/>
@@ -33,15 +33,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-64-BGk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o6C-64-BGk">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="o6C-64-BGk" firstAttribute="leading" secondItem="8tS-0A-WLk" secondAttribute="leading" id="1br-2Z-2wa"/>
+                                            <constraint firstItem="o6C-64-BGk" firstAttribute="top" secondItem="8tS-0A-WLk" secondAttribute="top" id="TG5-Kb-bnW"/>
+                                            <constraint firstAttribute="bottom" secondItem="o6C-64-BGk" secondAttribute="bottom" id="WXv-QG-NYC"/>
+                                            <constraint firstAttribute="trailing" secondItem="o6C-64-BGk" secondAttribute="trailing" id="kVz-Fi-xXa"/>
+                                        </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="o6C-64-BGk" id="ixv-Uy-PKa"/>
+                                            <outlet property="imageView" destination="o6C-64-BGk" id="apb-C4-JDI"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -50,25 +56,25 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="r1H-LS-ZHj"/>
                                 </connections>
                             </collectionView>
-                            <tabBar opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GWp-eF-uw3">
+                            <tabBar opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWp-eF-uw3">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Lions" id="P6W-kG-CHT"/>
-                                    <tabBarItem title="Tigers" id="oqx-6f-De7"/>
-                                    <tabBarItem title="Bears" id="NWg-Xz-gfA"/>
+                                    <tabBarItem title="Lions" image="lion.jpg" id="P6W-kG-CHT"/>
+                                    <tabBarItem title="Tigers" image="tiger.jpg" id="oqx-6f-De7"/>
+                                    <tabBarItem title="Bears" image="bear.jpg" id="NWg-Xz-gfA"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="0bq-Va-I1i"/>
                                 </connections>
                             </tabBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PxG-A9-xuE">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxG-A9-xuE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXw-IR-bWr">
-                                        <rect key="frame" x="67" y="14" width="186" height="39"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXw-IR-bWr">
+                                        <rect key="frame" x="67" y="7" width="186" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -76,9 +82,27 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jXw-IR-bWr" firstAttribute="centerY" secondItem="PxG-A9-xuE" secondAttribute="centerY" id="8Ai-P0-tJ4"/>
+                                    <constraint firstItem="jXw-IR-bWr" firstAttribute="centerX" secondItem="PxG-A9-xuE" secondAttribute="centerX" id="elQ-ne-P62"/>
+                                    <constraint firstItem="jXw-IR-bWr" firstAttribute="leading" secondItem="PxG-A9-xuE" secondAttribute="leading" constant="67" id="rkW-Ul-Ugl"/>
+                                    <constraint firstAttribute="height" constant="53" id="xkY-fj-9Gs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PxG-A9-xuE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0Zh-kj-x7u"/>
+                            <constraint firstItem="xda-kG-PyU" firstAttribute="top" secondItem="PxG-A9-xuE" secondAttribute="bottom" id="2wX-3v-m8C"/>
+                            <constraint firstAttribute="bottom" secondItem="GWp-eF-uw3" secondAttribute="bottom" id="5JW-eH-kbR"/>
+                            <constraint firstAttribute="trailing" secondItem="PxG-A9-xuE" secondAttribute="trailing" id="9Zr-xZ-apO"/>
+                            <constraint firstItem="xda-kG-PyU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PE9-ld-fsn"/>
+                            <constraint firstAttribute="trailing" secondItem="xda-kG-PyU" secondAttribute="trailing" id="WsI-mv-ov2"/>
+                            <constraint firstItem="GWp-eF-uw3" firstAttribute="trailing" secondItem="xda-kG-PyU" secondAttribute="trailing" id="khp-tj-2H2"/>
+                            <constraint firstItem="GWp-eF-uw3" firstAttribute="top" secondItem="xda-kG-PyU" secondAttribute="bottom" id="m5q-cf-Ka5"/>
+                            <constraint firstItem="GWp-eF-uw3" firstAttribute="leading" secondItem="xda-kG-PyU" secondAttribute="leading" id="msA-Jr-4Gz"/>
+                            <constraint firstItem="PxG-A9-xuE" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="xzi-8D-KQG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Lions" id="lYN-eV-7CB"/>
                     <connections>
@@ -93,6 +117,11 @@
             <point key="canvasLocation" x="740" y="77"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bear.jpg" width="150" height="150"/>
+        <image name="lion.jpg" width="150" height="150"/>
+        <image name="tiger.jpg" width="150" height="150"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

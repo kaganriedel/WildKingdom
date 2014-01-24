@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "PhotoCollectionViewCell.h"
 
-@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
+@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate, UICollectionViewDelegateFlowLayout>
 {
     NSArray *photos;
     __weak IBOutlet UICollectionView *photoCollectionView;
@@ -39,7 +39,7 @@
     photos = nil;
     [photoCollectionView reloadData];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c7b7008c23d7346d825b2a16c2e5c49&tags=%@&format=json&nojsoncallback=1", searchString]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c7b7008c23d7346d825b2a16c2e5c49&tags=%@&page=1&per_page=20&sort=relevance&format=json&nojsoncallback=1", searchString]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -55,7 +55,23 @@
      }];
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    if (fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        flowLayout.itemSize = CGSizeMake(150, 150);
+        
+        [photoCollectionView setCollectionViewLayout:flowLayout animated:YES];
+    } else {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        flowLayout.itemSize = CGSizeMake(250, 250);
 
+        [photoCollectionView setCollectionViewLayout:flowLayout animated:YES];
+    }
+}
 
 #pragma mark UITabBarDelegate
 
@@ -83,26 +99,33 @@
         }
 }
 
+
+
 #pragma mark UICollectionViewDelegate
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCellID" forIndexPath:indexPath];
     NSDictionary *photo = photos[indexPath.row];
-    NSString *urlString = [NSString stringWithFormat: @"http://farm%@.staticflickr.com/%@/%@_%@_q.jpg", photo[@"farm"], photo[@"server"], photo[@"id"], photo[@"secret"]];
+    NSString *urlString = [NSString stringWithFormat: @"http://farm%@.staticflickr.com/%@/%@_%@_n.jpg", photo[@"farm"], photo[@"server"], photo[@"id"], photo[@"secret"]];
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     cell.imageView.image = image;
     
-    cell.backgroundColor = [UIColor redColor];
     
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    if (photos.count > 10)
+    {
+        return 10;
+    } else
+    {
     return photos.count;
+    }
 }
 
 @end
