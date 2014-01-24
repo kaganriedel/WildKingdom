@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D0128C51892DD2700D72A6D /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128C41892DD2700D72A6D /* lion.jpg */; };
-		6D0128C71892DD2C00D72A6D /* tiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128C61892DD2C00D72A6D /* tiger.jpg */; };
-		6D0128C91892DD3000D72A6D /* bear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128C81892DD3000D72A6D /* bear.jpg */; };
 		6D0128CC189309BB00D72A6D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0128CB189309BB00D72A6D /* MapViewController.m */; };
 		6D0128CE18930AC000D72A6D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0128CD18930ABF00D72A6D /* MapKit.framework */; };
+		6D0128D01893344000D72A6D /* tiger.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128CF1893344000D72A6D /* tiger.png */; };
+		6D0128D21893345400D72A6D /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128D11893345400D72A6D /* lion.png */; };
+		6D0128D41893345C00D72A6D /* bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128D31893345C00D72A6D /* bear.png */; };
 		6D0705FA1891A8380026860E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0705F91891A8380026860E /* Foundation.framework */; };
 		6D0705FC1891A8380026860E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0705FB1891A8380026860E /* CoreGraphics.framework */; };
 		6D0705FE1891A8390026860E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0705FD1891A8390026860E /* UIKit.framework */; };
@@ -40,12 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D0128C41892DD2700D72A6D /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
-		6D0128C61892DD2C00D72A6D /* tiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiger.jpg; sourceTree = "<group>"; };
-		6D0128C81892DD3000D72A6D /* bear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bear.jpg; sourceTree = "<group>"; };
 		6D0128CA189309BB00D72A6D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		6D0128CB189309BB00D72A6D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		6D0128CD18930ABF00D72A6D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6D0128CF1893344000D72A6D /* tiger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiger.png; sourceTree = "<group>"; };
+		6D0128D11893345400D72A6D /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
+		6D0128D31893345C00D72A6D /* bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear.png; sourceTree = "<group>"; };
 		6D0705F61891A8380026860E /* WildKingdom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WildKingdom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0705F91891A8380026860E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D0705FB1891A8380026860E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -176,9 +176,9 @@
 		6D07062F1891C3A70026860E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				6D0128C81892DD3000D72A6D /* bear.jpg */,
-				6D0128C61892DD2C00D72A6D /* tiger.jpg */,
-				6D0128C41892DD2700D72A6D /* lion.jpg */,
+				6D0128D11893345400D72A6D /* lion.png */,
+				6D0128D31893345C00D72A6D /* bear.png */,
+				6D0128CF1893344000D72A6D /* tiger.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -260,11 +260,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D0706121891A8390026860E /* Images.xcassets in Resources */,
-				6D0128C91892DD3000D72A6D /* bear.jpg in Resources */,
-				6D0128C51892DD2700D72A6D /* lion.jpg in Resources */,
+				6D0128D21893345400D72A6D /* lion.png in Resources */,
 				6D0706041891A8390026860E /* InfoPlist.strings in Resources */,
-				6D0128C71892DD2C00D72A6D /* tiger.jpg in Resources */,
 				6D07060D1891A8390026860E /* Main.storyboard in Resources */,
+				6D0128D01893344000D72A6D /* tiger.png in Resources */,
+				6D0128D41893345C00D72A6D /* bear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

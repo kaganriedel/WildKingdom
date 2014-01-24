@@ -61,9 +61,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Lions" id="P6W-kG-CHT"/>
-                                    <tabBarItem title="Tigers" id="oqx-6f-De7"/>
-                                    <tabBarItem title="Bears" id="NWg-Xz-gfA"/>
+                                    <tabBarItem title="Lions" image="lion.png" id="P6W-kG-CHT"/>
+                                    <tabBarItem title="Tigers" image="tiger.png" id="oqx-6f-De7"/>
+                                    <tabBarItem title="Bears" image="bear.png" id="NWg-Xz-gfA"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="0bq-Va-I1i"/>
@@ -146,6 +146,11 @@
             <point key="canvasLocation" x="1732" y="77"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bear.png" width="32" height="32"/>
+        <image name="lion.png" width="32" height="32"/>
+        <image name="tiger.png" width="36" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
