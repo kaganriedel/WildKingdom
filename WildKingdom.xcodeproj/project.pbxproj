@@ -10,6 +10,8 @@
 		6D0128C51892DD2700D72A6D /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128C41892DD2700D72A6D /* lion.jpg */; };
 		6D0128C71892DD2C00D72A6D /* tiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128C61892DD2C00D72A6D /* tiger.jpg */; };
 		6D0128C91892DD3000D72A6D /* bear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128C81892DD3000D72A6D /* bear.jpg */; };
+		6D0128CC189309BB00D72A6D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0128CB189309BB00D72A6D /* MapViewController.m */; };
+		6D0128CE18930AC000D72A6D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0128CD18930ABF00D72A6D /* MapKit.framework */; };
 		6D0705FA1891A8380026860E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0705F91891A8380026860E /* Foundation.framework */; };
 		6D0705FC1891A8380026860E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0705FB1891A8380026860E /* CoreGraphics.framework */; };
 		6D0705FE1891A8390026860E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0705FD1891A8390026860E /* UIKit.framework */; };
@@ -41,6 +43,9 @@
 		6D0128C41892DD2700D72A6D /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
 		6D0128C61892DD2C00D72A6D /* tiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiger.jpg; sourceTree = "<group>"; };
 		6D0128C81892DD3000D72A6D /* bear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bear.jpg; sourceTree = "<group>"; };
+		6D0128CA189309BB00D72A6D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		6D0128CB189309BB00D72A6D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		6D0128CD18930ABF00D72A6D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6D0705F61891A8380026860E /* WildKingdom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WildKingdom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0705F91891A8380026860E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D0705FB1891A8380026860E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D0128CE18930AC000D72A6D /* MapKit.framework in Frameworks */,
 				6D0705FC1891A8380026860E /* CoreGraphics.framework in Frameworks */,
 				6D0705FE1891A8390026860E /* UIKit.framework in Frameworks */,
 				6D0705FA1891A8380026860E /* Foundation.framework in Frameworks */,
@@ -110,6 +116,7 @@
 		6D0705F81891A8380026860E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D0128CD18930ABF00D72A6D /* MapKit.framework */,
 				6D0705F91891A8380026860E /* Foundation.framework */,
 				6D0705FB1891A8380026860E /* CoreGraphics.framework */,
 				6D0705FD1891A8390026860E /* UIKit.framework */,
@@ -126,6 +133,8 @@
 				6D0706091891A8390026860E /* AppDelegate.m */,
 				6D07060E1891A8390026860E /* ViewController.h */,
 				6D07060F1891A8390026860E /* ViewController.m */,
+				6D0128CA189309BB00D72A6D /* MapViewController.h */,
+				6D0128CB189309BB00D72A6D /* MapViewController.m */,
 				6D0706301891C4C00026860E /* PhotoCollectionViewCell.h */,
 				6D0706311891C4C00026860E /* PhotoCollectionViewCell.m */,
 				6D0706111891A8390026860E /* Images.xcassets */,
@@ -276,6 +285,7 @@
 			files = (
 				6D0706101891A8390026860E /* ViewController.m in Sources */,
 				6D0706321891C4C00026860E /* PhotoCollectionViewCell.m in Sources */,
+				6D0128CC189309BB00D72A6D /* MapViewController.m in Sources */,
 				6D07060A1891A8390026860E /* AppDelegate.m in Sources */,
 				6D0706061891A8390026860E /* main.m in Sources */,
 			);
