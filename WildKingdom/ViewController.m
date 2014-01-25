@@ -18,7 +18,7 @@
 
     __weak IBOutlet UITabBar *rootTabBar;
     
-    
+    NSDictionary *mapSeguePhotoDictionary;
     
 }
 
@@ -75,6 +75,17 @@
     }
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"MapSegue"])
+    {
+        
+        MapViewController *vc = segue.destinationViewController;
+        vc.photoInfo = mapSeguePhotoDictionary;
+    }
+}
+
 #pragma mark UITabBarDelegate
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
@@ -101,22 +112,32 @@
         }
 }
 
-
 #pragma mark UICollectionViewDelegate
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *photo = photos[indexPath.row];
-    [self performSegueWithIdentifier:@"MapSegue" sender:photo];
+    PhotoCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    mapSeguePhotoDictionary = cell.photoDictionary;
+    
+    if (cell.imageView.alpha == 1.0) {
+        cell.hiddenImage = cell.imageView.image;
+
+        [UIView transitionFromView:cell.imageView toView:cell.infoView duration:2.0 options:UIViewAnimationOptionTransitionCurlUp completion:nil];
+        cell.imageView.alpha = 0.0;
+        cell.infoView.alpha = 1.0;
+    } else {
+        
+        [UIView transitionFromView:cell.infoView toView:cell.imageView duration:2.0 options:UIViewAnimationOptionTransitionCurlDown completion:nil];
+        cell.imageView.alpha = 1.0;
+        cell.infoView.alpha = 0.0;
+        cell.imageView.image = [UIImage imageNamed:@"lion.jpg"];
+        
+    }
+
+
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSDictionary*)photoLocation
-{
-    MapViewController *vc = segue.destinationViewController;
-    vc.photoInfo = photoLocation;
-}
-
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+-(PhotoCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCellID" forIndexPath:indexPath];
     cell.photoDictionary = photos[indexPath.row];
@@ -125,7 +146,7 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     cell.imageView.image = image;
-    
+    cell.infoTitleLabel.text = [NSString stringWithFormat:@"Title: %@", cell.photoDictionary[@"title"]];
     return cell;
 }
 
@@ -139,5 +160,11 @@
     return photos.count;
     }
 }
+
+/*Known issues
+ -Photos don't reappear after infoView appears
+ -If user taps on a photo, then another, the map link will always bring them to the most recent photo's map
+ -When you navigate to a different tab, or scroll the cells keep the infoView instead of showing the imageView
+ */
 
 @end

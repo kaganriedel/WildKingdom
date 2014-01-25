@@ -27,6 +27,7 @@
 		6D0706231891A8390026860E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D0706211891A8390026860E /* InfoPlist.strings */; };
 		6D0706251891A8390026860E /* WildKingdomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0706241891A8390026860E /* WildKingdomTests.m */; };
 		6D0706321891C4C00026860E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0706311891C4C00026860E /* PhotoCollectionViewCell.m */; };
+		6DD9FA02189450E900D77ABB /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9FA01189450E900D77ABB /* lion.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		6D0706241891A8390026860E /* WildKingdomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WildKingdomTests.m; sourceTree = "<group>"; };
 		6D0706301891C4C00026860E /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		6D0706311891C4C00026860E /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		6DD9FA01189450E900D77ABB /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		6D07062F1891C3A70026860E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6DD9FA01189450E900D77ABB /* lion.jpg */,
 				6D0128D11893345400D72A6D /* lion.png */,
 				6D0128D31893345C00D72A6D /* bear.png */,
 				6D0128CF1893344000D72A6D /* tiger.png */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D0706121891A8390026860E /* Images.xcassets in Resources */,
+				6DD9FA02189450E900D77ABB /* lion.jpg in Resources */,
 				6D0128D21893345400D72A6D /* lion.png in Resources */,
 				6D0706041891A8390026860E /* InfoPlist.strings in Resources */,
 				6D07060D1891A8390026860E /* Main.storyboard in Resources */,

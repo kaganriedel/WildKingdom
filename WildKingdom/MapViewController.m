@@ -45,8 +45,6 @@
          pointAnnotation.title = locationDictionary[@"county"][@"_content"];
          
          [_map addAnnotation:pointAnnotation];
-         
-         //next step! set an MKMapAnnotation to this location!
      }];
 
 }

@@ -37,17 +37,53 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JG8-yg-qUp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uI-z0-XKo">
+                                                            <rect key="frame" x="94" y="114" width="31" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Map">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <segue destination="qjW-X5-RFm" kind="push" identifier="MapSegue" id="pte-k0-grk"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="bgF-Qv-FNa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerX" secondItem="7uI-z0-XKo" secondAttribute="centerX" constant="-34.5" id="Qt2-5j-exP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7uI-z0-XKo" secondAttribute="trailing" constant="25" id="eOn-Pa-COt"/>
+                                                        <constraint firstAttribute="centerY" secondItem="7uI-z0-XKo" secondAttribute="centerY" constant="-54" id="gB9-NE-w8h"/>
+                                                        <constraint firstItem="7uI-z0-XKo" firstAttribute="top" secondItem="JG8-yg-qUp" secondAttribute="top" constant="114" id="xv1-5K-gnQ"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="o6C-64-BGk" firstAttribute="leading" secondItem="8tS-0A-WLk" secondAttribute="leading" id="1br-2Z-2wa"/>
+                                            <constraint firstItem="JG8-yg-qUp" firstAttribute="top" secondItem="8tS-0A-WLk" secondAttribute="top" id="92B-0Z-kKq"/>
+                                            <constraint firstAttribute="bottom" secondItem="JG8-yg-qUp" secondAttribute="bottom" id="9rL-WT-yqc"/>
+                                            <constraint firstAttribute="trailing" secondItem="JG8-yg-qUp" secondAttribute="trailing" id="KFe-kz-lV6"/>
                                             <constraint firstItem="o6C-64-BGk" firstAttribute="top" secondItem="8tS-0A-WLk" secondAttribute="top" id="TG5-Kb-bnW"/>
                                             <constraint firstAttribute="bottom" secondItem="o6C-64-BGk" secondAttribute="bottom" id="WXv-QG-NYC"/>
+                                            <constraint firstItem="JG8-yg-qUp" firstAttribute="leading" secondItem="8tS-0A-WLk" secondAttribute="leading" id="Y24-LB-RHq"/>
                                             <constraint firstAttribute="trailing" secondItem="o6C-64-BGk" secondAttribute="trailing" id="kVz-Fi-xXa"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="o6C-64-BGk" id="apb-C4-JDI"/>
+                                            <outlet property="infoTitleLabel" destination="bgF-Qv-FNa" id="Ook-QF-p6r"/>
+                                            <outlet property="infoView" destination="JG8-yg-qUp" id="BQ1-Ad-Qb8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -81,11 +117,12 @@
                             <constraint firstItem="GWp-eF-uw3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="tLu-zc-KYp"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Lions" id="X52-zt-ZhJ"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="xda-kG-PyU" id="VD1-a5-ZPY"/>
                         <outlet property="rootTabBar" destination="GWp-eF-uw3" id="WrI-zz-H7N"/>
-                        <segue destination="qjW-X5-RFm" kind="push" identifier="MapSegue" id="kIz-qZ-tHK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

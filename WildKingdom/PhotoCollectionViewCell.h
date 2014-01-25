@@ -12,5 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property NSDictionary *photoDictionary;
+@property (weak, nonatomic) IBOutlet UIView *infoView;
+@property UIImage *hiddenImage;
+@property (weak, nonatomic) IBOutlet UILabel *infoTitleLabel;
+
 
 @end
