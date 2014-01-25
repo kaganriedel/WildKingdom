@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "PhotoCollectionViewCell.h"
 #import "MapViewController.h"
+#import "PhotographerViewController.h"
 #import <MapKit/MapKit.h>
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
@@ -18,7 +19,7 @@
 
     __weak IBOutlet UITabBar *rootTabBar;
     
-    NSDictionary *mapSeguePhotoDictionary;
+    NSDictionary *seguePhotoDictionary;
     
 }
 
@@ -40,7 +41,7 @@
     photos = nil;
     [photoCollectionView reloadData];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c7b7008c23d7346d825b2a16c2e5c49&tags=%@&page=1&per_page=20&has_geo=1&sort=relevance&format=json&nojsoncallback=1", searchString]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c7b7008c23d7346d825b2a16c2e5c49&tags=%@&page=1&per_page=10&has_geo=1&sort=relevance&format=json&nojsoncallback=1", searchString]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -80,9 +81,13 @@
 {
     if ([segue.identifier isEqualToString:@"MapSegue"])
     {
-        
         MapViewController *vc = segue.destinationViewController;
-        vc.photoInfo = mapSeguePhotoDictionary;
+        vc.photoInfo = seguePhotoDictionary;
+    }
+    if ([segue.identifier isEqualToString:@"PhotoSegue"])
+    {
+        PhotographerViewController *vc = segue.destinationViewController;
+        vc.photoInfo = seguePhotoDictionary;
     }
 }
 
@@ -117,7 +122,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PhotoCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    mapSeguePhotoDictionary = cell.photoDictionary;
+    seguePhotoDictionary = cell.photoDictionary;
     
     if (cell.imageView.alpha == 1.0) {
         cell.hiddenImage = cell.imageView.image;
@@ -147,6 +152,7 @@
     UIImage *image = [UIImage imageWithData:data];
     cell.imageView.image = image;
     cell.infoTitleLabel.text = [NSString stringWithFormat:@"Title: %@", cell.photoDictionary[@"title"]];
+    [cell.infoTitleLabel sizeToFit];
     return cell;
 }
 

@@ -27,6 +27,7 @@
 		6D0706231891A8390026860E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D0706211891A8390026860E /* InfoPlist.strings */; };
 		6D0706251891A8390026860E /* WildKingdomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0706241891A8390026860E /* WildKingdomTests.m */; };
 		6D0706321891C4C00026860E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0706311891C4C00026860E /* PhotoCollectionViewCell.m */; };
+		6D5AE5B318945E36009BD160 /* PhotographerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AE5B218945E36009BD160 /* PhotographerViewController.m */; };
 		6DD9FA02189450E900D77ABB /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9FA01189450E900D77ABB /* lion.jpg */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		6D0706241891A8390026860E /* WildKingdomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WildKingdomTests.m; sourceTree = "<group>"; };
 		6D0706301891C4C00026860E /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		6D0706311891C4C00026860E /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		6D5AE5B118945E36009BD160 /* PhotographerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotographerViewController.h; sourceTree = "<group>"; };
+		6D5AE5B218945E36009BD160 /* PhotographerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotographerViewController.m; sourceTree = "<group>"; };
 		6DD9FA01189450E900D77ABB /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +140,8 @@
 				6D07060F1891A8390026860E /* ViewController.m */,
 				6D0128CA189309BB00D72A6D /* MapViewController.h */,
 				6D0128CB189309BB00D72A6D /* MapViewController.m */,
+				6D5AE5B118945E36009BD160 /* PhotographerViewController.h */,
+				6D5AE5B218945E36009BD160 /* PhotographerViewController.m */,
 				6D0706301891C4C00026860E /* PhotoCollectionViewCell.h */,
 				6D0706311891C4C00026860E /* PhotoCollectionViewCell.m */,
 				6D0706111891A8390026860E /* Images.xcassets */,
@@ -288,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D0706101891A8390026860E /* ViewController.m in Sources */,
+				6D5AE5B318945E36009BD160 /* PhotographerViewController.m in Sources */,
 				6D0706321891C4C00026860E /* PhotoCollectionViewCell.m in Sources */,
 				6D0128CC189309BB00D72A6D /* MapViewController.m in Sources */,
 				6D07060A1891A8390026860E /* AppDelegate.m in Sources */,
