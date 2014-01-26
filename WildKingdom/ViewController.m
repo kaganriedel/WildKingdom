@@ -41,7 +41,7 @@
     photos = nil;
     [photoCollectionView reloadData];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c7b7008c23d7346d825b2a16c2e5c49&tags=%@&page=1&per_page=10&has_geo=1&sort=relevance&format=json&nojsoncallback=1", searchString]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c7b7008c23d7346d825b2a16c2e5c49&tags=%@&page=1&per_page=20&has_geo=1&sort=relevance&format=json&nojsoncallback=1", searchString]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -158,9 +158,9 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (photos.count > 10)
+    if (photos.count > 20)
     {
-        return 10;
+        return 20;
     } else
     {
     return photos.count;
@@ -170,7 +170,9 @@
 /*Known issues
  -Photos don't reappear after infoView appears
  -If user taps on a photo, then another, the map link will always bring them to the most recent photo's map
+ -Ideally, a rotated photo would automatically rotate back if you click anywhere else
  -When you navigate to a different tab, or scroll the cells keep the infoView instead of showing the imageView
+ 
  */
 
 @end

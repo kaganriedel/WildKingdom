@@ -36,7 +36,7 @@
     photos = nil;
     [photoCollectionView reloadData];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=c187929476cd969b9153e579038a4692&user_id=%@&per_page=10&page=1&format=json&nojsoncallback=1", _photoInfo[@"owner"]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=1c7b7008c23d7346d825b2a16c2e5c49&user_id=%@&per_page=20&page=1&format=json&nojsoncallback=1", _photoInfo[@"owner"]]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -79,17 +79,15 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
-    cell.imageView.image = image;
-    cell.infoTitleLabel.text = [NSString stringWithFormat:@"Title: %@", cell.photoDictionary[@"title"]];
-    [cell.infoTitleLabel sizeToFit];
+    cell.imageViewMorePhotos.image = image;
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (photos.count > 10)
+    if (photos.count > 20)
     {
-        return 10;
+        return 20;
     } else
     {
         return photos.count;

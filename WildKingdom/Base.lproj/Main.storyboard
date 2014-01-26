@@ -178,14 +178,29 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MorePhotosCell" id="TSF-Mt-Gez">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MorePhotosCell" id="TSF-Mt-Gez" customClass="PhotoCollectionViewCell">
                                         <rect key="frame" x="0.0" y="64" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q0u-7O-MwG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="q0u-7O-MwG" firstAttribute="leading" secondItem="TSF-Mt-Gez" secondAttribute="leading" id="3vR-06-HIt"/>
+                                            <constraint firstItem="q0u-7O-MwG" firstAttribute="top" secondItem="TSF-Mt-Gez" secondAttribute="top" id="EtW-Xw-ZHB"/>
+                                            <constraint firstAttribute="bottom" secondItem="q0u-7O-MwG" secondAttribute="bottom" id="HSq-tI-tjD"/>
+                                            <constraint firstAttribute="trailing" secondItem="q0u-7O-MwG" secondAttribute="trailing" id="Hti-Hj-fIe"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageViewMorePhotos" destination="q0u-7O-MwG" id="UB6-jB-2oF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
