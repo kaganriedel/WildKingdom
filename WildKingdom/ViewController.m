@@ -124,26 +124,43 @@
     PhotoCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     seguePhotoDictionary = cell.photoDictionary;
     
-    if (cell.imageView.alpha == 1.0) {
+    if (cell.isImageShowing)
+    {
         cell.hiddenImage = cell.imageView.image;
-
-        [UIView transitionFromView:cell.imageView toView:cell.infoView duration:2.0 options:UIViewAnimationOptionTransitionCurlUp completion:nil];
+        cell.isImageShowing = NO;
+        cell.infoTitleLabel.text = cell.photoDictionary[@"title"];
         cell.imageView.alpha = 0.0;
         cell.infoView.alpha = 1.0;
-    } else {
-        
-        [UIView transitionFromView:cell.infoView toView:cell.imageView duration:2.0 options:UIViewAnimationOptionTransitionCurlDown completion:nil];
+        [UIView transitionFromView:cell.imageView toView:cell.infoView duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+    } else
+    {
+        [UIView transitionFromView:cell.infoView toView:cell.imageView duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:cell.hiddenImage];
+        [cell.contentView addSubview:imageView];
+        cell.isImageShowing = YES;
         cell.imageView.alpha = 1.0;
         cell.infoView.alpha = 0.0;
-        cell.imageView.image = [UIImage imageNamed:@"lion.jpg"];
-        
     }
-
-
 }
 
 -(PhotoCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+//    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCellID" forIndexPath:indexPath];
+//    cell.photoDictionary = photos[indexPath.row];
+//    NSString *urlString = [NSString stringWithFormat: @"http://farm%@.staticflickr.com/%@/%@_%@_q.jpg", cell.photoDictionary[@"farm"], cell.photoDictionary[@"server"], cell.photoDictionary[@"id"], cell.photoDictionary[@"secret"]];
+//    NSURL *url = [NSURL URLWithString:urlString];
+//    NSData *data = [NSData dataWithContentsOfURL:url];
+//    UIImage *image = [UIImage imageWithData:data];
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+//    imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    [cell.contentView addSubview:imageView];
+//    cell.isImageShowing = YES;
+//    return cell;
+
+
+    
+    
+    
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCellID" forIndexPath:indexPath];
     cell.photoDictionary = photos[indexPath.row];
     NSString *urlString = [NSString stringWithFormat: @"http://farm%@.staticflickr.com/%@/%@_%@_q.jpg", cell.photoDictionary[@"farm"], cell.photoDictionary[@"server"], cell.photoDictionary[@"id"], cell.photoDictionary[@"secret"]];
@@ -151,8 +168,9 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     cell.imageView.image = image;
-    cell.infoTitleLabel.text = [NSString stringWithFormat:@"Title: %@", cell.photoDictionary[@"title"]];
-    [cell.infoTitleLabel sizeToFit];
+    cell.isImageShowing = YES;
+    
+    
     return cell;
 }
 
@@ -172,7 +190,6 @@
  -If user taps on a photo, then another, the map link will always bring them to the most recent photo's map
  -Ideally, a rotated photo would automatically rotate back if you click anywhere else
  -When you navigate to a different tab, or scroll the cells keep the infoView instead of showing the imageView
- 
  */
 
 @end

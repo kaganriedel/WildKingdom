@@ -79,7 +79,10 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
-    cell.imageViewMorePhotos.image = image;
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [cell.contentView addSubview:imageView];
+    
     return cell;
 }
 

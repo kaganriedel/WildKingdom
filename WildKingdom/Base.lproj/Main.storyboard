@@ -63,7 +63,7 @@
                                                                 <constraint firstAttribute="height" constant="47" id="FxU-B5-Jcr"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-OF-F4n">
@@ -82,7 +82,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="ssf-OF-F4n" firstAttribute="leading" secondItem="JG8-yg-qUp" secondAttribute="leading" id="5rR-rW-1v3"/>
                                                         <constraint firstAttribute="bottom" secondItem="ssf-OF-F4n" secondAttribute="bottom" id="6x6-KN-imT"/>
@@ -184,23 +184,8 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q0u-7O-MwG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="q0u-7O-MwG" firstAttribute="leading" secondItem="TSF-Mt-Gez" secondAttribute="leading" id="3vR-06-HIt"/>
-                                            <constraint firstItem="q0u-7O-MwG" firstAttribute="top" secondItem="TSF-Mt-Gez" secondAttribute="top" id="EtW-Xw-ZHB"/>
-                                            <constraint firstAttribute="bottom" secondItem="q0u-7O-MwG" secondAttribute="bottom" id="HSq-tI-tjD"/>
-                                            <constraint firstAttribute="trailing" secondItem="q0u-7O-MwG" secondAttribute="trailing" id="Hti-Hj-fIe"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageViewMorePhotos" destination="q0u-7O-MwG" id="UB6-jB-2oF"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

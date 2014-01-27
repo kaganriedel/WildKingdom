@@ -16,6 +16,7 @@
 @property UIImage *hiddenImage;
 @property (weak, nonatomic) IBOutlet UILabel *infoTitleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewMorePhotos;
+@property BOOL isImageShowing;
 
 
 @end
